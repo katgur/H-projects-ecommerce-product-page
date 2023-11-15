@@ -46,20 +46,6 @@ p {
     padding-inline-start: 0;
 }
 
-a:link,
-a:visited {
-    color: var(--text-link);
-}
-
-a:hover {
-    color: var(--bgr-accent);
-    background-color: var(--bgr-hover);
-}
-
-a:active {
-    color: var(--text-primary);
-}
-
 figure {
     margin: 0;
     margin-block-start: 0;
@@ -76,9 +62,25 @@ input, button {
     background-color: var(--black-75);
 }
 
+nav>a:hover, nav>a:active {
+    border-bottom: var(--orange) 4px solid;
+    color: var(--very-dark-blue);
+}
+
 .font-l {
     color: var(--very-dark-blue);
     font-size: 17px;
     font-weight: 700;
     letter-spacing: 0.05em;
+}
+
+.font-m {
+    color: var(--grayish-blue);
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.font-s {
+    color: var(--grayish-blue);
+    font-size: 15px;
 }
