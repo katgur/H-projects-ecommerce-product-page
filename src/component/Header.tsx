@@ -17,35 +17,41 @@ function Header() {
     }
 
     return (
-        <div>
-            <button onClick={onMenuButtonClick}>
-                <svg xmlns="http://www.w3.org/2000/svg" role="img" {...menuSize}>
-                    <use xlinkHref={`#${menuIcon}`}></use>
-                </svg>
-            </button>
+        <header className="flex justify-between h-16 px-6 pt-3 pb-5 relative">
             {
                 isNavVisible &&
-                <nav>
-                    <button onClick={onCloseButtonClick}>
-                        <svg xmlns="http://www.w3.org/2000/svg" role="img" {...closeSize}>
-                            <use xlinkHref={`#${closeIcon}`}></use>
-                        </svg>
-                    </button>
-                    <a href="#">Collections</a>
-                    <a href="#">Men</a>
-                    <a href="#">Women</a>
-                    <a href="#">About</a>
-                    <a href="#">Contact</a>
-                </nav>
+                <div className="absolute z-10 inset-0 header-wrapper h-screen w-screen">
+                    <nav className="flex flex-col bg-white w-2/3 h-full pt-6 pl-6">
+                        <button onClick={onCloseButtonClick}>
+                            <svg xmlns="http://www.w3.org/2000/svg" role="img" {...closeSize}>
+                                <use xlinkHref={`#${closeIcon}`}></use>
+                            </svg>
+                        </button>
+                        <a className="mt-12 pb-2 font-l" href="#">Collections</a>
+                        <a className="mt-4 pb-1 font-l" href="#">Men</a>
+                        <a className="mt-4 pb-1 font-l" href="#">Women</a>
+                        <a className="mt-4 pb-1 font-l" href="#">About</a>
+                        <a className="mt-4 pb-1 font-l" href="#">Contact</a>
+                    </nav>
+                </div>
             }
-            <img src={logo} alt="Sneakers Logo" />
-            <a href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" role="img" {...cartSize}>
-                    <use xlinkHref={`#${cartIcon}`}></use>
-                </svg>
-            </a>
-            <img src={avatar} alt="Avatar" />
-        </div>
+            <div className='flex items-center gap-4'>
+                <button onClick={onMenuButtonClick}>
+                    <svg xmlns="http://www.w3.org/2000/svg" role="img" {...menuSize}>
+                        <use xlinkHref={`#${menuIcon}`}></use>
+                    </svg>
+                </button>
+                <img src={logo} alt="Sneakers Logo" />
+            </div>
+            <div className='flex items-center gap-5'>
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" role="img" {...cartSize}>
+                        <use xlinkHref={`#${cartIcon}`}></use>
+                    </svg>
+                </a>
+                <img className="h-6 w-6" src={avatar} alt="Avatar" />
+            </div>
+        </header>
     )
 }
 

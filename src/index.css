@@ -1,5 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
     margin: 0;
+    --very-dark-blue: #1D2025;
+    --orange: #FF7D1A;
+    --pale-orange: #FFEDE0;
+    --grayish-blue: #68707D;
+    --light-grayish-blue: #F7F8FD;
+    --black-75: rgba(0, 0, 0, 0.75);
 }
 
 body * {
@@ -60,4 +70,15 @@ figure {
 
 input, button {
     border: 0;
+}
+
+.header-wrapper {
+    background-color: var(--black-75);
+}
+
+.font-l {
+    color: var(--very-dark-blue);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
 }
