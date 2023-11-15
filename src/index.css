@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    --very-dark-blue: #1D2025;
+    --orange: #FF7D1A;
+    --pale-orange: #FFEDE0;
+    --grayish-blue: #68707D;
+    --light-grayish-blue: #F7F8FD;
+    --black-75: rgba(0, 0, 0, 0.75);
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+menu,
+nav,
+p {
+    margin: 0;
+    padding: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+}
+
+figure {
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+input, button {
+    border: 0;
+}
+
+.header-wrapper {
+    background-color: var(--black-75);
+}
+
+nav>a:hover, nav>a:active {
+    border-bottom: var(--orange) 4px solid;
+    color: var(--very-dark-blue);
+}
+
+.font-l {
+    color: var(--very-dark-blue);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.font-m {
+    color: var(--grayish-blue);
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.font-s {
+    color: var(--grayish-blue);
+    font-size: 15px;
+}
