@@ -12,6 +12,9 @@ export default {
             borderColor: {
                 orange: '#FF7D1A'
             },
+            letterSpacing: {
+                wider: '.03em',
+            }
         },
     },
     plugins: [],

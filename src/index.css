@@ -121,6 +121,24 @@ nav>a:active {
     font-weight: 700;
 }
 
+@media (min-width: 1024px) {
+    .font-xxl {
+        font-size: 44px;
+        line-height: 48px;
+    }
+
+    .font-xs {
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: 0;
+    }
+
+    .font-xxs {
+        font-size: 14px;
+        letter-spacing: 0.08em;
+    }
+}
+
 ins {
     all: unset
 }
