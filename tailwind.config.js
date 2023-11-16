@@ -6,9 +6,12 @@ export default {
     ],
     theme: {
         extend: {
-            margin: {
-                '165px': '165px'
+            flexGrow: {
+                4: '4'
             },
+            borderColor: {
+                orange: '#FF7D1A'
+            }
         },
     },
     plugins: [],

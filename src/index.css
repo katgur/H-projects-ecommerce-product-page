@@ -4,6 +4,7 @@
 
 body {
     margin: 0;
+    overflow-x: hidden;
     --very-dark-blue: #1D2025;
     --orange: #FF7D1A;
     --pale-orange: #FFEDE0;
@@ -26,7 +27,8 @@ h6 {
     padding: 0;
 }
 
-ul, ol {
+ul,
+ol {
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -54,7 +56,8 @@ figure {
     margin-inline-end: 0;
 }
 
-input, button {
+input,
+button {
     border: 0;
 }
 
@@ -62,7 +65,8 @@ input, button {
     background-color: var(--black-75);
 }
 
-nav>a:hover, nav>a:active {
+nav>a:hover,
+nav>a:active {
     border-bottom: var(--orange) 4px solid;
     color: var(--very-dark-blue);
 }
@@ -83,4 +87,30 @@ nav>a:hover, nav>a:active {
 .font-s {
     color: var(--grayish-blue);
     font-size: 15px;
+    letter-spacing: 0.01em;
+}
+
+.gallery {
+    background: url('./img/image-product-1.webp') no-repeat,
+        url('./img/image-product-2.webp') no-repeat,
+        url('./img/image-product-3.webp') no-repeat,
+        url('./img/image-product-4.webp') no-repeat;
+    background-size: 100vw;
+    background-position-y: -35px, 0, 0, 0;
+}
+
+.index-0 {
+    background-position-x: 0, 100vw, 200vw, 300vw;
+}
+
+.index-1 {
+    background-position-x: -100vw, 0, 100vw, 200vw;
+}
+
+.index-2 {
+    background-position-x: -200vw, -100vw, 0, 100vw;
+}
+
+.index-3 {
+    background-position-x: -300vw, -200vw, -100vw, 0;
 }

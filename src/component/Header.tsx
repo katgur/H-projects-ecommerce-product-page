@@ -16,7 +16,7 @@ function MobileNav({ isNavVisible, onCloseButtonClick }: MobileNavProps) {
         <>
             {
                 isNavVisible &&
-                <div className="absolute z-10 inset-0 header-wrapper h-screen w-screen ml-[-24px]">
+                <div className="absolute z-20 inset-0 header-wrapper h-screen w-screen ml-[-24px]">
                     <nav className="flex flex-col bg-white w-2/3 h-full pt-6 pl-6">
                         {
                             <button onClick={onCloseButtonClick}>
@@ -40,7 +40,7 @@ function MobileNav({ isNavVisible, onCloseButtonClick }: MobileNavProps) {
 
 function DesktopNav() {
     return (
-        <nav className="flex ml-10 gap-9 h-full pt-3">
+        <nav className="flex ml-10 gap-9 h-full lg:pt-[18px]">
             <a className="font-s" href="#">Collections</a>
             <a className="font-s" href="#">Men</a>
             <a className="font-s" href="#">Women</a>
@@ -63,7 +63,7 @@ function Header() {
     }
 
     return (
-        <header className="flex justify-between relative pt-3 pt-5 lg:pt-7 lg:border-b-2 lg:border-[#F7F8FD]">
+        <header className="flex justify-between relative pb-1 lg:pt-6 lg:border-b-2 lg:border-[#F7F8FD]">
             {width === 'mobile' && <MobileNav isNavVisible={isNavVisible} onCloseButtonClick={onCloseButtonClick} />}
             <div className='flex items-center gap-4'>
                 {
@@ -77,7 +77,7 @@ function Header() {
                 <img className="lg:mb-5" src={logo} alt="Sneakers Logo" />
                 {width === 'desktop' && <DesktopNav />}
             </div>
-            <div className='flex items-center gap-5 mb-5 lg:gap-12'>
+            <div className='flex items-center gap-6 mb-5 pt-5 lg:pt-2 lg:gap-12'>
                 <a href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" role="img" {...cartSize}>
                         <use xlinkHref={`#${cartIcon}`}></use>
