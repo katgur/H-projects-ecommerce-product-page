@@ -2,7 +2,7 @@ import Gallery from './Gallery'
 
 function Product() {
     return (
-        <div className="mt-[91px]">
+        <div className="lg:mt-[91px]">
             <Gallery />
         </div>
     )
