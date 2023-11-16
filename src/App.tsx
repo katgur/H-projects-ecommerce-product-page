@@ -1,11 +1,11 @@
-import Gallery from './component/Gallery'
 import Header from './component/Header'
+import Product from './component/Product'
 
 export default function App() {
     return (
         <div className="mx-6 lg:mx-[165px]">
             <Header />
-            <Gallery />
+            <Product />
         </div>
     )
 }
