@@ -56,7 +56,7 @@ function DesktopGallery() {
     }
 
     return (
-        <div className='w-[40%]'>
+        <div className='lg:w-[40%]'>
             <img className='w-full rounded-2xl' src={pictures.current[index]} />
             <ul className="mt-[30px] flex justify-between">
                 {
