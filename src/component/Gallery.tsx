@@ -7,6 +7,8 @@ import picture2 from '../img/image-product-2.webp'
 import picture3 from '../img/image-product-3.webp'
 import picture4 from '../img/image-product-4.webp'
 import Thumbnail from './Thumbnail'
+import Modal from './Modal'
+import Lightbox from './Lightbox'
 
 function MobileGallery() {
     const [index, setIndex] = useState<number>(0)
@@ -43,29 +45,29 @@ function MobileGallery() {
     )
 }
 
-interface GalleryProps {
-    setVisible: (isVisible: boolean) => void,
-}
-
-function DesktopGallery({ setVisible }: GalleryProps) {
+function DesktopGallery() {
     const pictures = useRef([picture1, picture2, picture3, picture4])
     const [index, setIndex] = useState<number>(0)
+    const [isModalVisible, setModalVisible] = useState<boolean>(false)
 
     return (
         <div className='lg:w-[40%]'>
-            <img onClick={() => setVisible(true)} className='cursor-zoom-in w-full rounded-2xl' src={pictures.current[index]} />
+            <img onClick={() => setModalVisible(true)} className='cursor-zoom-in w-full rounded-2xl' src={pictures.current[index]} />
             <Thumbnail index={index} setIndex={setIndex} />
+            <Modal isVisible={isModalVisible}>
+                <Lightbox onCloseButtonClick={() => setModalVisible(false)} />
+            </Modal>
         </div>
     )
 }
 
-function Gallery({ setVisible }: GalleryProps) {
+function Gallery() {
     const width = useWindowWidth()
 
     return (
         <>
             {width === 'mobile' && <MobileGallery />}
-            {width === 'desktop' && <DesktopGallery setVisible={setVisible} />}
+            {width === 'desktop' && <DesktopGallery />}
         </>
     )
 }

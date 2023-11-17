@@ -9,10 +9,10 @@ import nextIcon from '../img/sprite/icon-next.svg'
 import closeIcon from '../img/sprite/icon-close.svg'
 
 interface LightboxProps {
-    setVisible: (isVisible: boolean) => void,
+    onCloseButtonClick: () => void,
 }
 
-function Lightbox({ setVisible }: LightboxProps) {
+function Lightbox({ onCloseButtonClick }: LightboxProps) {
     const pictures = useRef([picture1, picture2, picture3, picture4])
     const [index, setIndex] = useState<number>(0)
 
@@ -32,8 +32,8 @@ function Lightbox({ setVisible }: LightboxProps) {
 
     return (
         <div className="z-30 inset-0 overflow-y-auto fixed modal-wrapper w-screen h-full p-2">
-            <div className="relative w-[38%] m-auto table">
-                <button onClick={() => setVisible(false)} className="float-right mb-4">
+            <div className="w-[38%] mx-auto my-[87px]">
+                <button onClick={onCloseButtonClick} className="float-right mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="#FFF" role="img" width="21" height="21">
                         <use xlinkHref={`#${closeIcon}`}></use>
                     </svg>
