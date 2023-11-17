@@ -7,7 +7,7 @@ interface CartProps {
 
 function Cart({ products }: CartProps) {
     return (
-        <div className="absolute z-10 inset-0 bg-white rounded-[10px] h-fit m-2 mt-[76px]">
+        <div className="absolute inset-0 lg:inset-[unset] lg:w-1/4 lg:top-[90px] lg:right-[165px] lg:shadow-2xl lg:shadow-[#C3CAD9] z-10 bg-white rounded-[10px] h-fit m-2 mt-[76px] lg:m-0">
             <h1 className="font-bold text-[15px] leading-[14px] pl-6 py-[27px] border-b-2 border-[#F7F8FD]">Cart</h1>
             {
                 (!products || products.length === 0) &&
@@ -20,7 +20,7 @@ function Cart({ products }: CartProps) {
                         {
                             products.map(product => (
                                 <li className='w-full table clear-both mt-6'>
-                                    <img className='w-[50px] h-[50px] rounded float-left mr-4' src={product.imageUrl} alt={product.name} />
+                                    <img className='w-[50px] h-[50px] rounded float-left mr-4 mb-4' src={product.imageUrl} alt={product.name} />
                                     <h2 className='float-left text-[16px] font-medium'>{product.name}</h2>
                                     <br />
                                     <p className='float-left text-[16px] font-medium tracking-wide'>${product.cost.toFixed(2)} x {product.amount}

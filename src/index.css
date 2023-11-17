@@ -179,6 +179,7 @@ ins {
     display: inline-block;
 }
 
-.filter-white {
-    color: white
+.modal {
+    position: fixed;
+    top: 0;
 }
