@@ -34,24 +34,24 @@ function Details({ count, setCount }: DetailsProps) {
     }
 
     return (
-        <section className="lg:w-[40%] mt-5 pb-[88px] lg:pb-0 lg:mt-0">
+        <section className="lg:w-[40%] mt-4 pb-[88px] lg:pb-0 lg:mt-[-10px]">
             <p className='font-xxs'>
                 Sneaker Company
             </p>
 
-            <h2 className="font-xxl mt-3">
+            <h2 className="font-xxl mt-[19px]">
                 {product.name}
             </h2>
 
-            <p className="font-xs mt-4 lg:mt-9">
+            <p className="font-xs mt-4 lg:mt-[35px]">
                 These low-profile sneakers are your perfect casual wear companion. Featuring a
                 durable rubber outer sole, they’ll withstand everything the weather can offer.
             </p>
 
             <div className="mt-[30px] flex items-center flex-wrap lg:gap-2">
                 <ins className='font-xl'>{`$${product.cost.toFixed(2)}`}</ins>
-                <span className='ml-4 badge'>50%</span>
-                <del className='font-m text-[#1D2025] font-bold ml-auto tracking-wider lg:ml-0 lg:basis-full'>$250.00</del>
+                <span className='ml-4 badge lg:ml-1'>50%</span>
+                <del className='lg:mt-0 font-m text-[#1D2025] font-bold ml-auto tracking-wider lg:ml-0 lg:basis-full'>$250.00</del>
             </div>
 
             <div className="flex gap-4 flex-col lg:flex-row mt-[27px] lg:mt-[34px]">

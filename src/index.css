@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: "Kumbh Sans";
+    src: url('./font/KumbhSans-Regular.ttf') format('truetype');
+}
+
 body {
     margin: 0;
     overflow-x: hidden;
@@ -11,6 +16,7 @@ body {
     --grayish-blue: #68707D;
     --light-grayish-blue: #F7F8FD;
     --black-75: rgba(0, 0, 0, 0.75);
+    font-family: 'Kumbh Sans', sans-serif;
 }
 
 body * {
@@ -75,7 +81,7 @@ nav>a:active {
     color: var(--very-dark-blue);
     font-size: 28px;
     line-height: 32px;
-    letter-spacing: 0;
+    letter-spacing: 0.02em;
     font-weight: 700;
 }
 
@@ -83,7 +89,7 @@ nav>a:active {
     color: var(--very-dark-blue);
     font-size: 30px;
     line-height: 26px;
-    letter-spacing: 0;
+    letter-spacing: 0.035em;
     font-weight: 700;
 }
 

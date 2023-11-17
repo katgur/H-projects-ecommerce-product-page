@@ -43,7 +43,7 @@ function MobileNav({ isNavVisible, onCloseButtonClick }: MobileNavProps) {
 
 function DesktopNav() {
     return (
-        <nav className="flex ml-10 gap-9 h-full lg:pt-[18px]">
+        <nav className="flex ml-10 gap-8 h-full lg:pt-[18px]">
             <a className="font-s" href="#">Collections</a>
             <a className="font-s" href="#">Men</a>
             <a className="font-s" href="#">Women</a>

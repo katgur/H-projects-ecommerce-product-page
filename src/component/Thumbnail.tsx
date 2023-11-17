@@ -13,10 +13,10 @@ function Thumbnail({ index, setIndex }: ThumbnailProps) {
     const thumbnails = useRef([thumbnail1, thumbnail2, thumbnail3, thumbnail4])
 
     return (
-        <ul className="mt-[30px] flex justify-between">
+        <ul className="mt-[33px] flex justify-between">
             {
                 thumbnails.current.map((thumbnail, currentIndex) => {
-                    let itemStyle = 'rounded-[12px] w-[19%]'
+                    let itemStyle = 'rounded-[12px] w-[19.775%]'
                     let imageStyle = 'rounded-[10px]'
                     if (currentIndex === index) {
                         itemStyle += ' border-2 border-[orange]'
