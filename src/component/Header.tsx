@@ -5,6 +5,9 @@ import cartIcon, { size as cartSize } from '../img/sprite/icon-cart.svg'
 import closeIcon, { size as closeSize } from '../img/sprite/icon-close.svg'
 import menuIcon, { size as menuSize } from '../img/sprite/icon-menu.svg'
 import useWindowWidth from '../hook/useWindowWidth'
+import Cart from './Cart'
+import productThumbnail from '../img/image-product-1-thumbnail.webp'
+import Modal from './Modal'
 
 interface MobileNavProps {
     isNavVisible: boolean,
@@ -53,7 +56,7 @@ function DesktopNav() {
 function Header() {
     const [isNavVisible, setNavVisible] = useState<boolean>(false)
     const width = useWindowWidth()
-
+    const [isCartPopupVisible, setCartPopupVisible] = useState<boolean>(false)
     const onCloseButtonClick = () => {
         setNavVisible(false)
     }
@@ -61,6 +64,9 @@ function Header() {
     const onMenuButtonClick = () => {
         setNavVisible(true)
     }
+
+    const products = [{ name: 'Fall Limited Edition Sneakers', cost: 125, amount: 3, imageUrl: productThumbnail }]
+    const totalAmount = products.reduce((acc, product) => acc + product.amount, 0)
 
     return (
         <header className="flex justify-between relative pb-1 lg:pt-6 lg:border-b-2 lg:border-[#F7F8FD]">
@@ -78,13 +84,17 @@ function Header() {
                 {width === 'desktop' && <DesktopNav />}
             </div>
             <div className='flex items-center gap-6 mb-5 pt-5 lg:pt-2 lg:gap-12'>
-                <a href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" role="img" {...cartSize}>
+                <button className='relative' onClick={() => setCartPopupVisible(!isCartPopupVisible)}>
+                    {totalAmount !== 0 && <span className='bg-[#FF7D1A] absolute right-[-8px] top-[-8px] text-white text-[10px] font-bold px-[7px] rounded-[9px]'>{totalAmount}</span>}
+                    <svg fill={products.length ? '#000' : '#69707D'} xmlns="http://www.w3.org/2000/svg" role="img" {...cartSize}>
                         <use xlinkHref={`#${cartIcon}`}></use>
                     </svg>
-                </a>
+                </button>
                 <img className="h-6 w-6 lg:h-12 lg:w-12 rounded-full hover:border hover:border-[#FF7D1A]" src={avatar} alt="Avatar" />
             </div>
+            <Modal isVisible={isCartPopupVisible}>
+                <Cart products={products} />
+            </Modal>
         </header>
     )
 }
