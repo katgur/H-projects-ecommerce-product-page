@@ -6,8 +6,8 @@ import closeIcon, { size as closeSize } from '../img/sprite/icon-close.svg'
 import menuIcon, { size as menuSize } from '../img/sprite/icon-menu.svg'
 import useWindowWidth from '../hook/useWindowWidth'
 import Cart from './Cart'
-import productThumbnail from '../img/image-product-1-thumbnail.webp'
 import Modal from './Modal'
+import { useProductStore } from '../store.ts'
 
 interface MobileNavProps {
     isNavVisible: boolean,
@@ -65,7 +65,7 @@ function Header() {
         setNavVisible(true)
     }
 
-    const products = [{ name: 'Fall Limited Edition Sneakers', cost: 125, amount: 3, imageUrl: productThumbnail }]
+    const products = useProductStore(state => state.products)
     const totalAmount = products.reduce((acc, product) => acc + product.amount, 0)
 
     return (
