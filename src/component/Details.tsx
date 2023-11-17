@@ -55,8 +55,8 @@ function Details({ count, setCount }: DetailsProps) {
                     </button>
                 </div>
                 <button className='lg:w-[63%] flex justify-center gap-4 align-center w-full rounded-[10px] py-4 bg-[#FF7D1A] font-m text-white font-bold lg:shadow-lg lg:shadow-orange-200'>
-                    <svg className="filter-white" width="20" height="20" xmlns="http://www.w3.org/2000/svg" role='img'>
-                        <use fill="#fff" xlinkHref={`#${cartIcon}`} />
+                    <svg fill="#fff" width="20" height="20" xmlns="http://www.w3.org/2000/svg" role='img'>
+                        <use xlinkHref={`#${cartIcon}`} />
                     </svg>
                     <span>Add to cart</span>
                 </button>
