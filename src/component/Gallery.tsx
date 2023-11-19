@@ -28,7 +28,7 @@ function MobileGallery() {
     }
 
     return (
-        <div className={`gallery index-${index} relative mx-[-24px] h-[300px] w-[400vw]`}>
+        <div className={`gallery index-${index} relative mx-[-24px] h-[300px] w-sreen`}>
             <div className="absolute w-screen inset-0 z-10 flex justify-between items-center px-4">
                 <button onClick={onPrevButtonClick} className="rounded-full bg-white w-10 h-10 flex justify-center items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" role="img" width="9" height="14">
