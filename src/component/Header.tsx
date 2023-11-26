@@ -43,7 +43,7 @@ function MobileNav({ isNavVisible, onCloseButtonClick }: MobileNavProps) {
 
 function DesktopNav() {
     return (
-        <nav className="flex ml-10 gap-8 h-full lg:pt-[18px]">
+        <nav className="flex ml-10 gap-8 h-full md:pt-[18px]">
             <a className="font-s" href="#">Collections</a>
             <a className="font-s" href="#">Men</a>
             <a className="font-s" href="#">Women</a>
@@ -69,7 +69,7 @@ function Header() {
     const totalAmount = products.reduce((acc, product) => acc + product.amount, 0)
 
     return (
-        <header className="flex justify-between relative pb-1 lg:pt-6 lg:border-b-2 lg:border-[#F7F8FD]">
+        <header className="flex justify-between relative pb-1 md:pt-6 lg:border-b-2 md:border-[#F7F8FD]">
             {width === 'mobile' && <MobileNav isNavVisible={isNavVisible} onCloseButtonClick={onCloseButtonClick} />}
             <div className='flex items-center gap-4'>
                 {
@@ -81,6 +81,7 @@ function Header() {
                     </button>
                 }
                 <img className="lg:mb-5" src={logo} alt="Sneakers Logo" />
+                {width === 'tablet' && <DesktopNav />}
                 {width === 'desktop' && <DesktopNav />}
             </div>
             <div className='flex items-center gap-6 mb-5 pt-5 lg:pt-2 lg:gap-12'>

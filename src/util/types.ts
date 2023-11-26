@@ -1,4 +1,4 @@
-export type width = 'mobile' | 'desktop'
+export type Width = 'mobile' | 'tablet' | 'desktop'
 export interface Product {
     name: string,
     cost: number,

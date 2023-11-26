@@ -1,15 +1,24 @@
 import { useState, useEffect } from 'react'
-import { width } from '../util/types'
+import { Width } from '../util/types'
+
+function reducer(width: number): Width {
+    if (width < 768) {
+        return 'mobile'
+    } else if (width >= 768) {
+        return 'tablet'
+    } else {
+        return 'desktop'
+    }
+}
 
 function useWindowWidth() {
-    const [width, setWidth] = useState<width>(window.innerWidth < 1024 ? 'mobile' : 'desktop')
+    const [width, setWidth] = useState<Width>(reducer(window.innerWidth))
 
     useEffect(() => {
         const onResize = () => {
-            if (window.innerWidth < 1024 && width !== 'mobile') {
-                setWidth('mobile')
-            } else if (window.innerWidth >= 1024 && width !== 'desktop') {
-                setWidth('desktop')
+            const newWidth = reducer(window.innerWidth)
+            if (width !== newWidth) {
+                setWidth(newWidth)
             }
         }
         window.addEventListener('resize', onResize)

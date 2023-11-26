@@ -67,6 +67,7 @@ function Gallery() {
     return (
         <>
             {width === 'mobile' && <MobileGallery />}
+            {width === 'tablet' && <DesktopGallery />}
             {width === 'desktop' && <DesktopGallery />}
         </>
     )
