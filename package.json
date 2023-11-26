@@ -8,8 +8,7 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext js,ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "build:graphics": "gulp",
-    "deploy": "@powershell Copy-Item dist -Recurse ../katgur.github.io/build/ecommerce-product-page && cd ../katgur.github.io && npm run deploy"
+    "build:graphics": "gulp"
   },
   "dependencies": {
     "react": "^18.2.0",
